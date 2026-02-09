@@ -14,3 +14,6 @@ In this question we find the sum of array and traverse loop again and chaeck by 
 
 ## Highest Altitude
 In this question we will take array of size n+1 and at 0th position will store zero and traverse the loop and add every element of given array to the new array and calculate the max and return the highest altitude.
+
+## Majority Element
+In this question we will solve using Moore's algorithm in which we count the vote and increment only compare with previous element is equal to current element.
