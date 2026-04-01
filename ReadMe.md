@@ -17,3 +17,9 @@ In this question we will take array of size n+1 and at 0th position will store z
 
 ## Majority Element
 In this question we will solve using Moore's algorithm in which we count the vote and increment only compare with previous element is equal to current element.
+
+## Greatest Common Divisor
+To find GCD of number we use **Euclidean Algorithm** where GCD of two numbers doesn’t change if we replace the bigger number with the remainder of both numbers.
+gcd(a, b) = gcd(b, a % b)
+👉 Repeat until b = 0
+👉 Final answer = a
