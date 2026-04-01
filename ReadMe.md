@@ -23,3 +23,6 @@ To find GCD of number we use **Euclidean Algorithm** where GCD of two numbers do
 gcd(a, b) = gcd(b, a % b)
 👉 Repeat until b = 0
 👉 Final answer = a
+
+## Kids With The Greatest Number Of Candies
+In this question we will find the maximum candy and then compare max candy with each candy and return the array.
