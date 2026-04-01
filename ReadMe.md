@@ -29,3 +29,8 @@ In this question we will find the maximum candy and then compare max candy with 
 
 ## Product Of Array And Self 
 In this question we will find the prefix and suffix of each array element and then multiply with each other.
+
+## Increasing Triplet Subsequence
+In this question we just need to track two smallest values:
+first → smallest so far
+second → second smallest so far
