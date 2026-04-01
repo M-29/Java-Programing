@@ -26,3 +26,6 @@ gcd(a, b) = gcd(b, a % b)
 
 ## Kids With The Greatest Number Of Candies
 In this question we will find the maximum candy and then compare max candy with each candy and return the array.
+
+## Product Of Array And Self 
+In this question we will find the prefix and suffix of each array element and then multiply with each other.
