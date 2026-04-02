@@ -29,3 +29,5 @@ class Main {
         }
     }
 }
+//Best Case complexity:- O(n)
+//Worst Case Complexity:- O(n^2)
