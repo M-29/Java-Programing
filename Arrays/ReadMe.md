@@ -34,3 +34,10 @@ In this question we will find the prefix and suffix of each array element and th
 In this question we just need to track two smallest values:
 first → smallest so far
 second → second smallest so far
+
+## Missing Number
+In this question we are using cyclic sort approach that:
+1. Every number should be at its correct index
+2. For range 0 to n, correct index = value itself
+3. Ignore number n (because index n doesn't exist)
+4. After sorting, the index where value ≠ index → missing number
