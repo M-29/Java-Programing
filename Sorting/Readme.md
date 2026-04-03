@@ -16,3 +16,16 @@ In this sorting algorithm we are repeatedly selects the largest element from the
 3. Swap it with the current index
 4. Move to next index
 5. Repeat until sorted
+
+# Insertion Sort
+Insertion Sort works like sorting playing cards in your hand 🃏 You pick one element and insert it into its correct position in the sorted part of the array.
+## How it works
+1. Assume the first element is already sorted
+2. Take the next element
+3. Compare it with previous elements
+4. Shift larger elements to the right
+5. Insert the element at the correct position
+6. Repeat for all elements
+# 🔹 Key Points
+  🔹 Efficient for small or nearly sorted arrays
+  🔹 Stable sorting algorithm
