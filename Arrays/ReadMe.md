@@ -41,3 +41,10 @@ In this question we are using cyclic sort approach that:
 2. For range 0 to n, correct index = value itself
 3. Ignore number n (because index n doesn't exist)
 4. After sorting, the index where value ≠ index → missing number
+
+## Find All Numbers Disappeared in an Array
+In this question we are using Cyclic Sort Concept that :
+1. Correct index for a number = value - 1
+2. Place every number at its correct index
+3. After that, check:
+    If arr[i] != i + 1 → number (i + 1) is missing
