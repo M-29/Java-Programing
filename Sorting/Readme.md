@@ -45,3 +45,38 @@ Place each element at its correct index.
 3. If not → swap it with the correct index
 4. If yes → move to next index
 5. Repeat until array is sorted
+
+# Quick Sort
+This is actually a Hoare partition style Quick Sort, and your code is almost perfect. Place all elements smaller than pivot on left side and larger on right side.
+Array:
+
+[5, 3, 2, 4, 1, 19, 28]
+ pivot = 4
+Iteration 1:
+s=0 → 5 (wrong, should be right side)
+e=6 → 28 (correct, move left)
+e=5 → 19 (correct, move left)
+e=4 → 1 (wrong)
+
+👉 Swap (5,1)
+
+[1, 3, 2, 4, 5, 19, 28]
+Iteration 2:
+s=1 → 3 (correct, move)
+s=2 → 2 (correct, move)
+s=3 → 4 (stop)
+e=3 → 4 (stop)
+
+👉 Swap (4,4) (self swap)
+
+Now:
+
+s=4, e=2 → STOP (s > e)
+🔄 Recursive Calls
+quickSort(arr, s, high); // right side
+quickSort(arr, low, e);  // left side
+
+👉 Now array is divided into:
+
+Left: smaller elements
+Right: larger elements
