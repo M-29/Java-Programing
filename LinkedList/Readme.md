@@ -59,3 +59,6 @@ dummy → 1 → 2 → 3 → 4 → 5 → 6
        return this
 👉 We skip dummy node because:
 it was just helper
+
+# Linked List Cycle
+In this question we are using fast and slow pointer concept. In which fast pointer moves two steps and slow pointer moves only one step. And if fast and slow pointer meet at same position then it is a cyclic list else it is not cyclic. 
