@@ -62,3 +62,5 @@ it was just helper
 
 # Linked List Cycle
 In this question we are using fast and slow pointer concept. In which fast pointer moves two steps and slow pointer moves only one step. And if fast and slow pointer meet at same position then it is a cyclic list else it is not cyclic. 
+# Length of a cycle 
+In this question we are using fast and slow pointer concept. And if fast and slow pointer meet at same position then it is a cyclic list else it is not cyclic. Then take the temp node starting from slow and move till again it euals to slow and increment the loop by 1 for this I have used do-while loop because it will move once.
