@@ -64,3 +64,14 @@ it was just helper
 In this question we are using fast and slow pointer concept. In which fast pointer moves two steps and slow pointer moves only one step. And if fast and slow pointer meet at same position then it is a cyclic list else it is not cyclic. 
 # Length of a cycle 
 In this question we are using fast and slow pointer concept. And if fast and slow pointer meet at same position then it is a cyclic list else it is not cyclic. Then take the temp node starting from slow and move till again it euals to slow and increment the loop by 1 for this I have used do-while loop because it will move once.
+
+# Find the node from where cycle starts
+## Aproach 1 :
+1. Find the length of the cycle
+2. Move the second pointer till the length of the cycle.
+3. Move the first and second pointer till first and second will be equal.
+
+## Aproach 2 :
+1. Find the cycle whether the list is cyclic or not using fast and slow pointer.
+2. Take the third pointer temp start from head and move till temp ans slow is not pointing to the same pointer
+3. And return slow because if they meet then that node is a starting node of the cycle.
