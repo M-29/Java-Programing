@@ -81,3 +81,6 @@ In this question we are using fast and slow pointer concept. And if fast and slo
 In approach 1 we are using SET. For every sum value we are checking whether sum is in present in set if sum present then returning false and if sum == 1 returning true.
 ## Aproach 2
 In this approach we are using fast and slow pointer concept.
+
+# Find elements after middle
+In this approach we are using fast and slow pointer concept.
