@@ -10,10 +10,10 @@ public class Solution {
             return null;
         }
         while(len > 0){
-            s = s.next;
+            s = s.next; // Moving the second pointer till the length of the cycle
             len--;
         }
-        while(f != s){
+        while(f != s){ // Keep moving the first and second pointer till they meet.
             f = f.next;
             s = s.next;
         }
