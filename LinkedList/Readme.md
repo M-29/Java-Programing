@@ -75,3 +75,9 @@ In this question we are using fast and slow pointer concept. And if fast and slo
 1. Find the cycle whether the list is cyclic or not using fast and slow pointer.
 2. Take the third pointer temp start from head and move till temp ans slow is not pointing to the same pointer
 3. And return slow because if they meet then that node is a starting node of the cycle.
+
+# Happy Number
+## Aproach 1
+In approach 1 we are using SET. For every sum value we are checking whether sum is in present in set if sum present then returning false and if sum == 1 returning true.
+## Aproach 2
+In this approach we are using fast and slow pointer concept.
