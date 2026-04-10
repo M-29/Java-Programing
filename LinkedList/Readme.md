@@ -84,3 +84,6 @@ In this approach we are using fast and slow pointer concept.
 
 # Find elements after middle
 In this approach we are using fast and slow pointer concept.
+
+# Sort Linked List
+In this approach we will sort the list using merge sort.
