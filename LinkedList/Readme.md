@@ -99,3 +99,11 @@ In this question we will first :-
 1. Move till left limit
 2. And secure the last element before sub array head
 3. then we will reverse the list till the right limit
+
+# Palindrome Linked List
+In this question we fill first find: -
+1. Middle node
+2. Then we will reverse the linked list from middle element
+3. Then we will compare the head value and reverse linked list head till null
+4. If the values are equal and reach till null then it is a palindrome linked list
+5. Else not a palindrome linked list. 
