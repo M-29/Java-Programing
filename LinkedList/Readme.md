@@ -87,3 +87,9 @@ In this approach we are using fast and slow pointer concept.
 
 # Sort Linked List
 In this approach we will sort the list using merge sort.
+
+# Maximum Twin Sum of a Linked List
+In this question we will first find the :-
+1. Middle Node
+2. Reverse the second half of the linked list from middle of the list
+3. Find the max twin sum 
