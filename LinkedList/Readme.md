@@ -107,3 +107,9 @@ In this question we fill first find: -
 3. Then we will compare the head value and reverse linked list head till null
 4. If the values are equal and reach till null then it is a palindrome linked list
 5. Else not a palindrome linked list. 
+
+# Reorder List
+In this question :-
+1. Find middle element
+2. reverse the half of linked list
+3. Then reorder the elements
