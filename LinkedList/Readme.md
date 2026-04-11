@@ -93,3 +93,9 @@ In this question we will first find the :-
 1. Middle Node
 2. Reverse the second half of the linked list from middle of the list
 3. Find the max twin sum 
+
+# Reverse Sub Linked list
+In this question we will first :-
+1. Move till left limit
+2. And secure the last element before sub array head
+3. then we will reverse the list till the right limit
