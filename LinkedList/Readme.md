@@ -113,3 +113,10 @@ In this question :-
 1. Find middle element
 2. reverse the half of linked list
 3. Then reorder the elements
+
+# Reverse K group of list
+In this question :
+1. Check k nodes
+2. Reverse k nodes
+3. Connect
+4. Move to next group
