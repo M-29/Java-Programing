@@ -120,3 +120,11 @@ In this question :
 2. Reverse k nodes
 3. Connect
 4. Move to next group
+
+# Rotate the linked list n number of times
+In this quetion :
+1. First move to the last element and length of list
+2. Reduce rotations:
+k = k % n This because let suppose length of list is 4 and need to rotate by 4 only after rotation there is no change we are getting the exact same list so no need to rotate same for if length is 4 and need to rotate 5 time after rotating 5 times only last element become head so we can do this in 1 step rather than rotating 5 times.
+3. Convert list into circular linked list
+4. Break at correct point
