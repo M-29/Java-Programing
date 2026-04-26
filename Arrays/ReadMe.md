@@ -48,3 +48,18 @@ In this question we are using Cyclic Sort Concept that :
 2. Place every number at its correct index
 3. After that, check:
     If arr[i] != i + 1 → number (i + 1) is missing
+
+## Count number of students
+Instead of simulating the queue (which is messy and slow), you:
+    Count how many students prefer:
+        0 → circular sandwich
+        1 → square sandwich
+    Then iterate over sandwiches and try to serve them
+    
+    int[] arr = {0,0};
+    arr[0] → number of students who want circular
+    arr[1] → number of students who want square
+    
+    for(int std : students){
+    arr[std]++;
+    Count preferences
