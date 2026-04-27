@@ -32,7 +32,7 @@ class Solution {
                 time += Math.min(tickets[i],tickets[k]);
             }
             else{
-                time += Math.min(tickets[i],tickets[k] - 1);
+                time += Math.min(tickets[i],tickets[k] - 1); 
             }
         }
         
