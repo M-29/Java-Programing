@@ -1,3 +1,4 @@
+// Approach 1
 class Solution {
     public int timeRequiredToBuy(int[] tickets, int k) {
         Queue<int[]> queue = new LinkedList<>();
