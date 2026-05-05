@@ -7,6 +7,7 @@ Function call itself to solve smaller version of problem is called recursion.
 #### Tail Recursion
 The tail recursion is the recursive function where the function calls itself at the end of the function in which no computation is done after the return of the recursive call.<br>
 **Eg.**
+```Java
   static void print(int n)
   {
       if (n < 0)
