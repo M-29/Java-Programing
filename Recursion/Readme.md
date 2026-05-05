@@ -27,3 +27,9 @@ The tail recursion is the recursive function where the function calls itself at 
     - Identify the flow of left tree calls and right tree calls
 - See how values are returned at each step
 - See where the function call will come out
+
+### Recurrence relation
+It is way to define a sequence where each term depends on one or more previous terms.
+##### Types of recurrence relation
+  - Linear Recurrence Relation eg: Fibonnaci number F(n) = F(n-1) + F(n-2)
+  - Divide And Conquer Recurrence Relation eg: Binary Search F(n) = O(1) + F(n/2)
