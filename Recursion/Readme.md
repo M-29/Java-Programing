@@ -17,3 +17,13 @@ The tail recursion is the recursive function where the function calls itself at 
       // is recursive call
       print(n - 1);
   }
+```
+##### How to solve a problem using recursion
+- Identify if you breakdown problem into smaller problems
+- Write the recurrence relation if needed
+- Draw the recursive tree
+- About the tree
+    - See the flow of function how they are gettin into the stack
+    - Identify the flow of left tree calls and right tree calls
+- See how values are returned at each step
+- See where the function call will come out
