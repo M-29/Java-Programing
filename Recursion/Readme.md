@@ -33,3 +33,6 @@ It is way to define a sequence where each term depends on one or more previous t
 ##### Types of recurrence relation
   - Linear Recurrence Relation eg: Fibonnaci number F(n) = F(n-1) + F(n-2)
   - Divide And Conquer Recurrence Relation eg: Binary Search F(n) = O(1) + F(n/2)
+##### Points to remember
+  - If you want to pass the variable in future function calls then put it in arguments
+  - If you want don't want to pass the variable in future function calls and it is only used in that function then put it inside the body of the function
