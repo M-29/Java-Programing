@@ -26,14 +26,14 @@ Insertion Sort works like sorting playing cards in your hand 🃏 You pick one e
 4. Shift larger elements to the right
 5. Insert the element at the correct position
 6. Repeat for all elements
-# Key Points
+#### Key Points
   - Efficient for small or nearly sorted arrays
   - Stable sorting algorithm
 # Cyclic Sort
 Cyclic Sort is a special sorting algorithm used when:
-Array contains numbers in a given range
-Typically from 1 to n (or 0 to n)
-No duplicates (in basic version)
+- Array contains numbers in a given range
+- Typically from 1 to n (or 0 to n)
+- No duplicates (in basic version)
 
 ### 🔹 Idea
 Place each element at its correct index.
