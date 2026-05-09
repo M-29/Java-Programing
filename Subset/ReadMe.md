@@ -12,3 +12,4 @@ A = {1, 2, 3}
 {2,3}
 {1,2,3}
 ```
+**Note:-** This pattere of taking some element and removing some element is known as subset pattern.
