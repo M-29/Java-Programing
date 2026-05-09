@@ -1,4 +1,4 @@
-# subset
+# Subset
 A set whose all elements are contained inside another set
 ```Java
 A = {1, 2, 3}
