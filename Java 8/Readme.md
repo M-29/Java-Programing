@@ -45,4 +45,7 @@ list.parallelStream().forEach(System.out::println);
 #### Topics need to be cover
 ![Logo](Images/Java8TopicList.png)
 
+## Default Methods
+##### Why we need default methods
+Before Java 8 an interface contain one abstract method m1 and sub class A nd sub class B who are implementing that interface need to provide implementation of that method. After sometime class A need another method m2 so we declared the abstract method in interface so class B forcefully need to provide the implementation of m2 here the default method came into the picture.  
 
