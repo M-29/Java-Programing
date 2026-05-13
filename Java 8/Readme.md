@@ -1,4 +1,4 @@
-Why Java 8?
+### Why Java 8?
 1. Java 8 came to reduce boilerplate code and make java code shorter and more readable using lambda expression.
 2. It become more readable using lambda expression.<br>
 **Before Java 8**
@@ -41,3 +41,6 @@ parallelStream()
 list.parallelStream().forEach(System.out::println);
 ```
 5. It modernized java with feature like functional programming, better Date/Time API and default methods in interface
+
+#### Topics need to be cover
+![Projeect Screenshot](images/Java8TopicList.png)
