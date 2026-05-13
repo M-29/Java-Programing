@@ -49,3 +49,15 @@ list.parallelStream().forEach(System.out::println);
 ##### Why we need default methods
 Before Java 8 an interface contain one abstract method m1 and sub class A nd sub class B who are implementing that interface need to provide implementation of that method. After sometime class A need another method m2 so we declared the abstract method in interface so class B forcefully need to provide the implementation of m2 here the default method came into the picture.  
 
+###### Default Method :- 
+It is an interface method that has implementation body.<br>
+It is optional to provide implementation in sub classes
+**Synatax:-**
+```Java
+    Interface example{
+        abstract void m1();
+        default void m2(){
+            //Body of amethod m2
+        }
+    }
+```
