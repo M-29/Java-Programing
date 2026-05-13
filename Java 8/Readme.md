@@ -1,6 +1,6 @@
 Why Java 8?
 1. Java 8 came to reduce boilerplate code and make java code shorter and more readable using lambda expression.
-2. It become more readable using lambda expression.
+2. It become more readable using lambda expression.<br>
 **Before Java 8**
 ```Java
     Collections.sort(list, new Comparator<Integer>() {
@@ -14,7 +14,7 @@ Why Java 8?
 ```Java 
   Collections.sort(list, (a, b) -> a - b);
 ```
-3. It introduce stream api to process collections more easily.
+3. It introduce stream api to process collections more easily.<br>
 **Before Java 8**
 ```Java
 List<Integer> result = new ArrayList<>();
@@ -31,7 +31,7 @@ list.stream()
     .filter(n -> n % 2 == 0)
     .forEach(System.out::println);
 ```
-4. It support parallel processing.
+4. It support parallel processing.<br>
 **Before Java 8**
 ```Java
 parallelStream()
@@ -40,4 +40,4 @@ parallelStream()
 ```Java
 list.parallelStream().forEach(System.out::println);
 ```
-6. It modernized java with feature like functional programming, better Date/Time API and default methods in interface
+5. It modernized java with feature like functional programming, better Date/Time API and default methods in interface
