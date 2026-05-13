@@ -43,4 +43,10 @@ list.parallelStream().forEach(System.out::println);
 5. It modernized java with feature like functional programming, better Date/Time API and default methods in interface
 
 #### Topics need to be cover
-![Logo](images/Java8TopicList.png)
+![Logo](Images/Java8TopicList.png)
+
+```HTML
+<p align="center">
+  <img src="Images/Java8TopicList.png" width="200"/>
+</p>
+```
