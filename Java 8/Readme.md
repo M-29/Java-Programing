@@ -51,7 +51,7 @@ Before Java 8 an interface contain one abstract method m1 and sub class A nd sub
 
 ###### Default Method :- 
 It is an interface method that has implementation body.<br>
-It is optional to provide implementation in sub classes
+It is optional to provide implementation in sub classes.<br>
 **Synatax:-**
 ```Java
     Interface example{
