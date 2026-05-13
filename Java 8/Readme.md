@@ -45,8 +45,4 @@ list.parallelStream().forEach(System.out::println);
 #### Topics need to be cover
 ![Logo](Images/Java8TopicList.png)
 
-```HTML
-<p align="center">
-  <img src="Images/Java8TopicList.png" width="200"/>
-</p>
-```
+
