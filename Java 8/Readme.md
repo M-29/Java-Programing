@@ -72,3 +72,4 @@ An interface which has only one abstract method is called functional interface.<
         void add(int a, int b);
     }
 ```
+- It is also known as SAM interface **Single Abstract Method**. <br>
