@@ -69,7 +69,7 @@ An interface which has only one abstract method is called functional interface.<
 **Example:-** <br>
 ```Java
     interface abc{
-        void add(int a, int b);
+        public abstract void add(int a, int b);
     }
 ```
 - It is also known as SAM interface **Single Abstract Method**. <br>
