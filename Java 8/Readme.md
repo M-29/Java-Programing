@@ -61,3 +61,14 @@ It is optional to provide implementation in sub classes.<br>
         }
     }
 ```
+###### Functional Programing
+By using functional programing we can pass function as an argument to a method.
+
+### Functional Interface
+An interface which has only one abstract method is called functional interface.<br>
+**Example:-** <br>
+```Java
+    interface abc{
+        void add(int a, int b);
+    }
+```
