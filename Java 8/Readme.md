@@ -87,6 +87,7 @@ g) public abstract int hashCode(){} Java.lang.object class methods are allowed a
 h) public default String toString(){
     return "HK";   // Java.lang.object class method are not allowed as a default method are not allowed as default method in functional interface
 }<br>
+
 **Important Points**
 - If a functional interface deriving from another functional interface and it is creating another abstract method then it is not allowed
 ```Java
