@@ -73,3 +73,29 @@ An interface which has only one abstract method is called functional interface.<
     }
 ```
 - It is also known as SAM interface **Single Abstract Method**. <br>
+- If an interface has only one abstarct method compiler consider it as a functional interface. Then compiler allow us to create  lambda expression  from this interface. <br>
+- If an interface has more than one abstract method then compiler will not consider it as a functional interface. Then compiler will not allow us to create lambda expression.
+
+### Methods allowed using @FunctionalInterface Annotation
+a) public void add(int a, int b); only one abstract method is allowed.<br>
+b) public static final int a = 10; Multiple static final methods are allowed<br>
+c) public static class A {} Multiple inner classes are allowed <br>
+d) public default void m1(){} Multiple default methods are allowed <br>
+e) public static void m3(){} multiple static methods are allowed <br>
+f) private static void m1(){} private static methods are not allowed till version 8 in version 9 it is allowed<br>
+g) public abstract int hashCode(){} Java.lang.object class methods are allowed as abstract method in functional interface<br>
+h) public default String toString(){
+    return "HK";   // Java.lang.object class method are not allowed as a default method are not allowed as default method in functional interface
+}
+**Important Points**
+- If a functional interface deriving from another functional interface and it is creating another abstract method then it is not allowed
+```Java
+    @FunctionalInterface
+    interface A {
+        void m1() {} //abstract method
+    }
+    @FunctionalInterface
+    interface B extends A{
+        void m2() {} // It will give compile time error  because if you mark it as a functional interface the it contain only one functional interface
+    } 
+```
