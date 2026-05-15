@@ -99,3 +99,13 @@ h) public default String toString(){
         void m2() {} // It will give compile time error  because if you mark it as a functional interface the it contain only one functional interface
     } 
 ```
+- If a non-functional interface extending functional interface then multiple abstract methods are allowed
+```Java
+    @FunctionalInterface
+    interface A{
+        void m1(){}
+    }
+    interface B extends A{
+        void m2(){} // No compile time error because this interface is not a functional interface.
+    }
+```
