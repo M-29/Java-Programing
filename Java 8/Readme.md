@@ -111,7 +111,7 @@ h) public default String toString(){
     }
 ```
 ### Lambda Expression
-An anonumous function used to implement functional interface.
+An anonymous function used to implement functional interface.<br>
 **Syntax:-**
 ```Java
     (a,b) -> a * b;
