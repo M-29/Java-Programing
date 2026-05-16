@@ -110,3 +110,9 @@ h) public default String toString(){
         void m2(){} // No compile time error because this interface is not a functional interface.
     }
 ```
+### Lambda Expression
+An anonumous function used to implement functional interface.
+**Syntax:-**
+```Java
+    (a,b) -> a * b;
+```
