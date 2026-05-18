@@ -113,8 +113,54 @@ h) public default String toString(){
 #### Types of functional interface
 **1. Consumer**
 Represents an operation, that accept a single input parameter and returns no result.<br>
-    - present in **java.util.function**
-
+    - present in **java.util.function**<br>
+```Java
+    @FunctionalInterface
+    public interface Consumer<T> {
+        void accept(T t);
+    }
+    public class Main{
+        Consumer<Integer> loggingObject = (Integer val) -> {
+            if(val > 10){
+                System.out.println("Logging");
+            }
+        }
+        loggingObject.accept(11);
+    }
+```
+**2. Supplier** 
+Represent the supplier of the result, accepts no input parameter but produce a result.<br>
+    - Present in **java.util.function**<br>
+```Java
+    @FunctionalInterface
+    public interface Supplier<T>{
+        T get();
+    }
+    public class Main{
+        public static void main(String[] args){
+            Supplier<String> isEvenNumber = () -> "This data is an even number data";
+            System.out.println(isEvenNumber.get());
+        }    
+    }
+```
+**3. Function**
+Represent function, that accept one argument process it and produce a result.<br>
+    - Present in package **java.util.function**<br>
+    ```Java 
+        @FunctionalInterface
+        public interface Function<T,R>{
+            R apply(T t);
+        }
+        public class Main{
+            public static void main(String[] args){
+                Function<Integer, String> intToStr = (Integer num) -> {
+                    String output = num.toString();
+                    return output;
+                }
+                System.out.println(Function.apply(11);
+            }
+        }
+    ```
 ### Lambda Expression
 An anonymous function used to implement functional interface.<br>
 **Syntax:-**
