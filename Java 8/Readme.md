@@ -146,7 +146,7 @@ Represent the supplier of the result, accepts no input parameter but produce a r
 **3. Function**
 Represent function, that accept one argument process it and produce a result.<br>
     - Present in package **java.util.function**<br>
-    ```java
+```Java
         @FunctionalInterface
         public interface Function<T,R>{
             R apply(T t);
@@ -160,7 +160,7 @@ Represent function, that accept one argument process it and produce a result.<br
                 System.out.println(Function.apply(11);
             }
         }
-    ```
+```
 ### Lambda Expression
 An anonymous function used to implement functional interface.<br>
 **Syntax:-**
