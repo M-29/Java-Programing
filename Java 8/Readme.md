@@ -145,8 +145,8 @@ Represent the supplier of the result, accepts no input parameter but produce a r
 ```
 **3. Function**
 Represent function, that accept one argument process it and produce a result.<br>
-    - Present in package **java.util.function**
-    ```Java 
+    - Present in package **java.util.function**<br>
+    ```Java
         @FunctionalInterface
         public interface Function<T,R>{
             R apply(T t);
