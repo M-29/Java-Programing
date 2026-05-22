@@ -183,4 +183,19 @@ A lambda expression is shorthand for writing an implementation of that single ab
     - So intToStr is actually a reference to an object of a compiler-generated class that implements Function<Integer, String>.<br>
 **4. Dynamic Binding**<br>
     - This process is dynamic — the compiler and JVM handle it at runtime using invokedynamic instructions.<br>
-    - That’s why lambdas are lightweight compared to anonymous inner classes.
+    - That’s why lambdas are lightweight compared to anonymous inner classes.<br>
+##### Lambda Expression in collection
+```Java
+    class Main{
+        public static void main(String[] args){
+            ArrayList<Integer> l = new ArrayList<>();
+            l.add(20);
+            l.add(5);
+            l.add(10);
+            l.add(15);
+            Comparator<Integer> c = (I1,I2) -> (I1<I2)?-1:(I1>I2)?1:0;
+            Collections.sort(l,c);
+            System.out.println(l);
+        }
+    }
+```
