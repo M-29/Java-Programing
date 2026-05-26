@@ -199,3 +199,16 @@ A lambda expression is shorthand for writing an implementation of that single ab
         }
     }
 ```
+### Anonymous Class
+A class without any name is known as anonymous inner class. An anonymous inner classs can extends as class or can implements an interface.
+```Java
+    Thread t = new Thread()
+    {
+        // anonymous inner class can extends a thread class.
+    }
+
+    Runnable r = new Runnable()
+    {
+        // anonymous inner class extends an interface.
+    }
+```
