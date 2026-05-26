@@ -212,3 +212,5 @@ A class without any name is known as anonymous inner class. An anonymous inner c
         // anonymous inner class extends an interface.
     }
 ```
+- Anonymous inner class is more powerful than lambda expression because if an interface having two methods we can't use lambda expression because that interface is not a functional interface any more.
+- For functional interface we can use lambda expression in place of anonymous inner class.
