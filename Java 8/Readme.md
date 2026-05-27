@@ -111,7 +111,7 @@ h) public default String toString(){
     }
 ```
 #### Types of functional interface
-**1. Consumer**
+**1. Consumer**<br>
 Represents an operation, that accept a single input parameter and returns no result.<br>
     - present in **java.util.function**<br>
 ```Java
@@ -128,7 +128,7 @@ Represents an operation, that accept a single input parameter and returns no res
         loggingObject.accept(11);
     }
 ```
-**2. Supplier** 
+**2. Supplier** <br>
 Represent the supplier of the result, accepts no input parameter but produce a result.<br>
     - Present in **java.util.function**<br>
 ```Java
@@ -143,7 +143,7 @@ Represent the supplier of the result, accepts no input parameter but produce a r
         }    
     }
 ```
-**3. Function**
+**3. Function**<br>
 Represent function, that accept one argument process it and produce a result.<br>
     - Present in package **java.util.function**<br>
 ```Java
@@ -160,6 +160,29 @@ Represent function, that accept one argument process it and produce a result.<br
                 System.out.println(Function.apply(11);
             }
         }
+```
+**4. Predicate**<br>
+Represents :- A condition that returns true or false<br>
+- It takes one input
+- Return boolean
+**Functional Method of Predicate**
+  ```Java
+    boolean test(T t)
+  //T = input type
+  //Return type = boolean
+  ```
+It is heavily used in:<br>
+- Stream API
+- Filtering
+- Validation
+- Conditional checks
+- Business rules
+```Java
+    Predicate<Integer> isEven =
+    n -> n % 2 == 0;
+
+    System.out.println(isEven.test(4));
+    System.out.println(isEven.test(7));
 ```
 ### Lambda Expression
 An anonymous function used to implement functional interface.<br>
