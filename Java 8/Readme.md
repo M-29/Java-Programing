@@ -185,6 +185,46 @@ Represent function, that accept one argument process it and produce a result.<br
             }
         }
 ```
+**Example**
+```Java
+import java.util.function.*;
+class Student{
+    String name;
+    int marks;
+    Student(String name, int marks){
+        this.name = name;
+        this.marks = marks;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+       Function<Student,String> f = s -> {
+           int marks = s.marks;
+           String grade ="";
+           if(marks >= 80) grade = "A";
+           else if(marks >= 60) grade = "B";
+           else if(marks >= 50) grade = "C";
+           else if(marks >= 35) grade = "D";
+           else grade = "E";
+           return grade;
+       };
+       Predicate<Student> p = s -> s.marks >50;
+       Student[] s = {
+           new Student("Ab",82),
+           new Student("Bc",72),
+           new Student("Cd",52),
+           new Student("De",42),
+           new Student("De",22)
+       };
+       for(Student s1 : s){
+           System.out.println("Name:- "+s1.name);
+           System.out.println("Marks:- "+s1.marks);
+           System.out.println("Grade:- "+f.apply(s1));
+           System.out.println();
+       }
+    }
+}
+```
 **4. Predicate**<br>
 Represents :- A condition that returns true or false<br>
 - It takes one input
