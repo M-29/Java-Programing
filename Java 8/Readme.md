@@ -61,6 +61,30 @@ It is optional to provide implementation in sub classes.<br>
         }
     }
 ```
+## Static Methods
+Static method in an interface belongs to the interface itself not to implementation class.
+```Java
+    interface test {
+        static int sum (int a, int b){
+            return a + b;
+        }
+    }
+    class Main {
+        public static void main(String[] args){
+            int res = test.sum(10,20);
+            System.out.println(res); // O/P 30
+        }
+    }
+```
+-To keep utility/helper methods related to the interface inside the interface itself we use Static Methods.
+##### Difference between default method and static method
+| Feature                         | Default Method | Static Method |
+| ------------------------------- | -------------- | ------------- |
+| Inherited by implementing class | ✅ Yes          | ❌ No          |
+| Can be overridden               | ✅ Yes          | ❌ No          |
+| Called using object             | ✅ Yes          | ❌ No          |
+| Called using interface name     | ❌ Usually not  | ✅ Yes         |
+
 ###### Functional Programing
 By using functional programing we can pass function as an argument to a method.
 
