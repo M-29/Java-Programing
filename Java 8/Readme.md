@@ -237,6 +237,21 @@ class Main {
     }
 }
 ```
+#### Combinig two predicate
+```Java
+class Main {
+    public static void main(String[] args) {
+        int[] x = {0,5,10,15,20,25,30};
+        Predicate<Integer> p = i -> i%2 == 0;
+        Predicate<Integer> p1 = i -> i > 10;
+        for(int j : x){
+            if(p.and(p1).test(j)){
+                System.out.println(j);
+            }
+        }
+    }
+}
+```
 ### Lambda Expression
 An anonymous function used to implement functional interface.<br>
 **Syntax:-**
