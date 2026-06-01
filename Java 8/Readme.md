@@ -237,7 +237,7 @@ class Main {
     }
 }
 ```
-#### Combinig two predicate
+#### Combinig two predicate using and(), or() and negate()
 ```Java
 class Main {
     public static void main(String[] args) {
