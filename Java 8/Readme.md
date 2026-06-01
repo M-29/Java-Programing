@@ -208,6 +208,35 @@ It is heavily used in:<br>
     System.out.println(isEven.test(4));
     System.out.println(isEven.test(7));
 ```
+**Example**
+```Java
+import java.util.function.*;
+import java.util.ArrayList;
+
+class Employee{
+    String name;
+    int salary;
+    Employee(String name, int salary){
+        this.name = name;
+        this.salary = salary;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        ArrayList<Employee> l = new ArrayList<Employee>();
+        l.add(new Employee("Mannat",20000));
+        l.add(new Employee("Rohan",50000));
+        l.add(new Employee("Vikas",40000));
+        l.add(new Employee("Deepanshi",200000));
+        Predicate<Employee> ep = e -> e.salary > 30000;
+        for(Employee e1 : l){
+            if(ep.test(e1)){
+                System.out.println(e1.name + " " + e1.salary);
+            }
+        }
+    }
+}
+```
 ### Lambda Expression
 An anonymous function used to implement functional interface.<br>
 **Syntax:-**
