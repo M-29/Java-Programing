@@ -45,6 +45,35 @@ public class Main{
 ```
 **Overloading of run method**<br>
 Overloading of run method is always possible but thread class start method can invoke no argument run method the other overloaded method we have to call explicitly like a normal method call.<br>
+**Example:-**
+```Java
+  public class Mythread extends Thread{
+    public void run(){
+        System.out.println("Child Thread");
+      }
+      public void run(int i){      
+        System.out.println(i);
+    }
+  }
+
+public class Main{
+  public static void main(String[] args){
+    Mythread myth = new Mythread();
+    myth.start(); // O/P is Child Thread
+  }
+}
+```
 
 **Not overrriding run method**<br>
 If we are not overriding run method then thread class run method will be executed which has empty implementation hence we will not get any output.
+```Java
+  public class Mythread extends Thread{
+    
+  }
+public class Main{
+  public static void main(String[] args){
+    Mythread myth = new Mythread();
+    myth.start(); // O/P No output
+  }
+}
+```
