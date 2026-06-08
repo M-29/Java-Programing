@@ -19,9 +19,10 @@ Thread Scheduler :- is responsible to schedule the threads i.e.; if multiple thr
 -It is a part of JVM
 -we can excpect thread execution order and exact output hence it is varried from JVM to JVM 
 
-**Difference b/w t.start() and t.run()**
+**Difference b/w t.start() and t.run()** <br>
 a) t.start() :- <br>
--It is used to create new thread and that thread is responsible to execute run method.
+-It is used to create new thread and that thread is responsible to execute run method.<br>
+-It is responsible to register thread with thread scheduler<br>
 
 b) t.run() :- <br>
 -Our run method is executed as a normal method call so main thread is responsible to execute the job
@@ -34,6 +35,7 @@ b) t.run() :- <br>
       }
     }
   }
+
 public class Main{
   public static void main(String[] args){
     Mythread myth = new Mythread();
@@ -41,3 +43,8 @@ public class Main{
   }
 }
 ```
+**Overloading of run method**<br>
+Overloading of run method is always possible but thread class start method can invoke no argument run method the other overloaded method we have to call explicitly like a normal method call.<br>
+
+**Not overrriding run method**<br>
+If we are not overriding run method then thread class run method will be executed which has empty implementation hence we will not get any output.
