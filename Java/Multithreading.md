@@ -20,3 +20,24 @@ Thread Scheduler :- is responsible to schedule the threads i.e.; if multiple thr
 -we can excpect thread execution order and exact output hence it is varried from JVM to JVM 
 
 **Difference b/w t.start() and t.run()**
+a) t.start() :- <br>
+-It is used to create new thread and that thread is responsible to execute run method.
+
+b) t.run() :- <br>
+-Our run method is executed as a normal method call so main thread is responsible to execute the job
+
+```Java
+  public class Mythread extends Thread{
+    public void run(){
+      for(int i = 0; i< 10; i++){
+        System.out.println("Child Thread");
+      }
+    }
+  }
+public class Main{
+  public static void main(String[] args){
+    Mythread myth = new Mythread();
+    myth.start(); // is responsible to create child thread and execute run method
+  }
+}
+```
