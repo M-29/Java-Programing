@@ -123,3 +123,21 @@ After starting a thread if you are trying to start a thread again you will get r
     }
   }
 ```
+- In above code we will get mixed output we can predict the exact output.<br>
+
+##### Case Studies <br>
+Myrunable r = new Myrunable();<br>
+Thread t1 = new Thread();<br>
+Thread t2 = new Thread(r)<br>
+**Case 1 :-** t1.start(); <br>
+A new thread will be created which is responsible for execution of thread class run method. which has empty implemetation.<br>
+**Case 2 :-** t1.run(); <br>
+No new thread will be created and thread class run method will be executed just like a normal method call
+**Case 3 :-** t2.start(); <br>
+A new thread will be created which is resposible for execution of Myrunnable class run method.<br>
+**Case 4 :-** t2.run(); <br>
+A new thread won't be created and myrunable will be executed just like a normal method call.<br>
+**Case 5 :-** r.start(); <br>
+We will get compile time error saying my runnable class doesn't have start capacity<br>
+**Case 6 :-** r.run(); <br>
+No new thread will be created and myrunnable run method will be executed like a normal method call<br>
