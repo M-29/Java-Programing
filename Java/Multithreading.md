@@ -77,3 +77,25 @@ public class Main{
   }
 }
 ```
+**Overriding start method**
+If we override start method then our start method will be executed just like a normal method call new thread will not be created.<br>
+**Example:-**
+```Java
+  public class Mythread extends Thread{
+    public void run(){
+        System.out.println("Child Thread");
+      }
+      public void start(){      
+        System.out.println("Start Method");
+    }
+  }
+
+public class Main{
+  public static void main(String[] args){
+    Mythread myth = new Mythread();
+    myth.start(); 
+    System.out.println("Main Method"); //  O/P is Start Method
+                                      // Main method
+  }
+}
+```
