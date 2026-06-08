@@ -108,3 +108,18 @@ After starting a thread if you are trying to start a thread again you will get r
   ```Java
   public void run()
   ```
+**Example:-**<br>
+```Java
+  public class Myrunable implements Runnable{
+    public void run(){
+      System.out.println("Child Thread");
+    }
+  }
+  puvlic class Main(){
+    public static void main(String[] args){
+      Myrunable r = new Myrunable();
+      r.run();
+      System.out.println("Main Thread");
+    }
+  }
+```
