@@ -79,6 +79,7 @@ public class Main{
 ```
 **Overriding start method**
 If we override start method then our start method will be executed just like a normal method call new thread will not be created.<br>
+-It is not recommended to override the start method 
 **Example:-**
 ```Java
   public class Mythread extends Thread{
@@ -99,3 +100,11 @@ public class Main{
   }
 }
 ```
+After starting a thread if you are trying to start a thread again you will get runtime exception saying illegal thread state exception.<br>
+
+#### Implementing thread class using runnable interface
+- Runnable interface present in Java.lang package
+- It contains only one method
+  ```Java
+  public void run()
+  ```
