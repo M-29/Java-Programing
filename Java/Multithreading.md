@@ -4,6 +4,7 @@ Types of multitasking<br>
 a) Process based multitasking : Executing several task simultaneously where each task is a seperate independent program
 eg Typing a java program, Downloading a file, Listening a music are eg of process based multi tasking because each task is seperate independent process. <br>
 - It is best suite for OS level <br>
+
 b) Thread based multitasking <br>
 Executing several task simultaneously where each task is a seperate independent part of a same program this type of multitasking is called thread based multitasking Each independent part is called thread<br>
 -It is best suite for programatic level<br>
