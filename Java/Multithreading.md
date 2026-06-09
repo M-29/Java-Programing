@@ -153,7 +153,17 @@ If a method or block declared as a synchronised then at a time only one thread i
 **Disadvantage**:- increases waiting time of threads and create performace problem.<br>
 - Internally synchronization concept is applicable using lock. Every object in java have a unique lock. Whenever we are using synchronize keyword then only lock concept comes in the picture.<br>
 - If a thread want to execute synchronize method on a given method first it has to getlock of that object. Once thread got the lock then it is allowed to execute any synchronize method on that object.<br>
--Once method execution completes thread release a lock<br>
--Internally aquiring and releasing lock internally takes care by JVM and programer is not responsible for this.<br>
--A thread executing synchronised method on a given object the remaining thread are not allowed to execute any synchronised method simultaneously on a same thread. But remaining threads are allowed to execute non synchronised method simultaneously<br>
--Lock concept is implemented based on object not based on method
+- Once method execution completes thread release a lock<br>
+- Internally aquiring and releasing lock internally takes care by JVM and programer is not responsible for this.<br>
+- A thread executing synchronised method on a given object the remaining thread are not allowed to execute any synchronised method simultaneously on a same thread. But remaining threads are allowed to execute non synchronised method simultaneously<br>
+- Lock concept is implemented based on object not based on method
+##### Java Object<br>
+Have two parts :- <br>
+a) **Non-Synchronised Area** :- This area can be accessed by multiple thread simultaneously eg:- Read operations<br>
+b) **Synchronised Area** :- This area can be accessed by one thread at a time eg:- All update, write delete operations we can perform here
+**Case Studies**
+Even though which method is synchronise we will get irregular output because threads are operating on different java object.
+If multiple thread are operating on same java object then synchronization is required.<br>
+If multiple threads are operating on different java object then synchronization is not required.<br>
+### Class Level Lock<br>
+Every class in java has a unique lock which is nothing but class level lock. If a thread wants to execute a static synchronize method then thread require class level lock. Once a class got a lock then it is allowed to execute any static synchronize method of class.<br>
