@@ -167,3 +167,20 @@ If multiple thread are operating on same java object then synchronization is req
 If multiple threads are operating on different java object then synchronization is not required.<br>
 ### Class Level Lock<br>
 Every class in java has a unique lock which is nothing but class level lock. If a thread wants to execute a static synchronize method then thread require class level lock. Once a class got a lock then it is allowed to execute any static synchronize method of class.<br>
+### Synchronized block<br>
+If very few lines of code required synchronization then it is not recommended to declare method as synchronized we have to enclose those few lines of code by using synchronised block.
+**We can declare synchronised block as follow**<br>
+```Java
+Synchronised(this){
+  //This is used to get a lock of current object then only this is allowed to execute this area
+}
+Synchronised(obj){
+  //This is used to get a lock of particular object then only this is allowed to execute this area
+}
+Synchronised(Display.class){
+  //This is used to get a class level lock then only this is allowed to execute this area
+}
+```
+- Synchronised keyword is not used for primitive vaue
+#### Race Condition<br>
+If multiple threads are operating simultaneously on same java object then there may be chance for data inconsistency problem this is called race condition. We can overcome this problem by synchronised keyword
