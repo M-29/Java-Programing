@@ -141,3 +141,19 @@ A new thread won't be created and myrunable will be executed just like a normal 
 We will get compile time error saying my runnable class doesn't have start capacity<br>
 **Case 6 :-** r.run(); <br>
 No new thread will be created and myrunnable run method will be executed like a normal method call<br>
+
+**Why runnable approach is better than thread class**
+With Implementing runnable interface we can extend classess but with extending thread class we can't get the benifit for inheritance so that's why implementing runnable interface is recommended.<br>
+
+### Synchronization<br>
+Synchronize is modifier applied only for methods and blocks but not for classes and variable.<br>
+If a multiple thread are operating on a same java object then there may be chance of data inconsistency problem to overcome this problem we are using synchronize keyword.<br>
+If a method or block declared as a synchronised then at a time only one thread is allowed to execute that method or block on a given object so that data inconsistency problem is resolved.<br>
+**Advantage**:- resolve data inconsistency problem.<br>
+**Disadvantage**:- increases waiting time of threads and create performace problem.<br>
+- Internally synchronization concept is applicable using lock. Every object in java have a unique lock. Whenever we are using synchronize keyword then only lock concept comes in the picture.<br>
+- If a thread want to execute synchronize method on a given method first it has to getlock of that object. Once thread got the lock then it is allowed to execute any synchronize method on that object.<br>
+-Once method execution completes thread release a lock<br>
+-Internally aquiring and releasing lock internally takes care by JVM and programer is not responsible for this.<br>
+-A thread executing synchronised method on a given object the remaining thread are not allowed to execute any synchronised method simultaneously on a same thread. But remaining threads are allowed to execute non synchronised method simultaneously<br>
+-Lock concept is implemented based on object not based on method
