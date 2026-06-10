@@ -183,4 +183,19 @@ Synchronised(Display.class){
 ```
 - Synchronised keyword is not used for primitive vaue
 #### Race Condition<br>
-If multiple threads are operating simultaneously on same java object then there may be chance for data inconsistency problem this is called race condition. We can overcome this problem by synchronised keyword
+If multiple threads are operating simultaneously on same java object then there may be chance for data inconsistency problem this is called race condition. We can overcome this problem by synchronised keyword.<br>
+
+###### Is a thread can acquire multiple locks?<br>
+Yes a thread can acquire multiple lock from different object<br>
+###### What is synchronised statement?
+A statements present in synchronised method or synchronised block is called synchronised statement.
+
+### Inter Thread Commmunication<br>
+Two thread can communicate with each other by using wait(), notify() and notifyAll().<br>
+**wait():-** The thread which is expecting updation is responsible to call wait() then immediately thread will enter into waiting state.<br>
+**notify():-** Thread which is responsible to perform updation after performing updation it is responsible to call notify().<br>
+**notifyAll():** Then waiting thread will get notification and continue its execution with those updated items <br>
+- These methods are present in object class but not in thread class because thread can call these methods on any java object <br>
+- To  call wait(), notify(), and notifyAll() methods on any object, thread should be owner of that object i.e thread should has lock of that object i.e., thread should be in synchronised area. Hence these methods are only called from synchronised area. otherwise will get IllegalMonitor state exception.<br>
+- If a thread calls wait() method on any object it immediately releases the lock of that particular object and entered into waiting state.<br>
+- If a thread call notify() method on any object it may or may not immediately releases the lock of the particular object and entered into waiting state. <br>
