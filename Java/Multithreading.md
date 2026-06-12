@@ -199,3 +199,17 @@ Two thread can communicate with each other by using wait(), notify() and notifyA
 - To  call wait(), notify(), and notifyAll() methods on any object, thread should be owner of that object i.e thread should has lock of that object i.e., thread should be in synchronised area. Hence these methods are only called from synchronised area. otherwise will get IllegalMonitor state exception.<br>
 - If a thread calls wait() method on any object it immediately releases the lock of that particular object and entered into waiting state.<br>
 - If a thread call notify() method on any object it may or may not immediately releases the lock of the particular object and entered into waiting state. <br>
+#### Producer and Consumer Problem<br>
+Producer thread is responsible to produce item to the queue and consumer thread is responsible to consume item from the queue. If a queue is empty the consumer thread will call wait method and enter into the waiting state. After producing items to the queue producer thread is responsible to call notify method then waiting consumer will get the notification and continue its executuion with updated items.<br>
+##### Difference b/w notify() and notifyAll()<br>
+- We can use notify() to give notification for only one waiting thread if multiple threads are waiting then only one threads will be notify and the remaining thread have to wait for further notification. Which thread will be notify it depends on JVM.<br>
+ - We can use notifyAll() to give notification for all waiting thread of a particular object. Even though multiple thread will be notify but execution will be perform one by one because every thread require a lock.<br>
+- On which method we are calling the wait() method thread required the lock of particular method. If we are calling wait method on s1 then we have to get lock of s1 object but not s2 method.<br>
+```Java
+synchronized(s1){
+  s2.wait();  // It will through RuntimeException IllegalMonitorStateException
+}
+synchronized(s1){
+  s1.wait();  
+}
+```
