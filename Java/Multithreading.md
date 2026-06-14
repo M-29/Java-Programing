@@ -213,3 +213,28 @@ synchronized(s1){
   s1.wait();  
 }
 ```
+##### Problems with synchronise keyword<br>
+Synchronise keyword is only reason for deadlock situation hence while using synchronise keyword we have to take special care. There is no resolution techique for deadlock but several prevention technique are available.<br>
+#### Deadlock v/s Starvation<br>
+Deadlock:- A long waiting of thread where waiting never ends this type of situation is called deadlock.<br>
+Starvation:- A long of thread where waiting ends at certain point this type of situation is called starvation.<br>
+
+##### Daemon Thread <br>
+- The threads which are executing in the background are called daemon thread eg:- Garbage collector, signal dispatcher etc;<br>
+- The main objective for daemon thread is to provide support non daemon thread(Main thread). Eg,. If main thread runs with low memory then JVM run garbage collector to destroy useless object so that number of free memory will be improved with this free memory main thread can continue execution.<br>
+- Usually daemon threads have kow priority but based on our requirement daemon thread can run on high priority.<br>
+- We can check daemon nature of a thread by using isDaemon() of thread class. 
+```Java
+public boolean isDaemon();
+public void setDaemon(boolean b);
+```
+- But changing daemon nature is possible before starting of a thread only. But after starting if you are trying to change the nature you will get runtime exception IllegalThreadException.<br>
+- By default main thread is always is non-daemon and for all remaing thread daemon nature is inherited from parent to child i.e., If parent class is daemon then automatically child class is also non-daemon.<br>
+- It is impossible to change daemon nature of main thread because it is already started by JVM at the begining<br>
+- Whenever last non daemon thread will be terminates automatically all daemon threads will be terminated irrespective of their position.<br>
+
+#### Two models to implement multithreading in Java<br>
+a) Green Thread Model :- Thread which is managed completely by JVM without taking underline OS support is called Green thread. It is depricated and not recommended to use.<br>
+b) Native OS Model :- The thread which is managed by JVM with the help of underline OS, is called native OS Model. All windows based OS provide support for native os model.<br> 
+
+## Thread Group<br>
