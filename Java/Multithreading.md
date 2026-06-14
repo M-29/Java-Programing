@@ -238,3 +238,20 @@ a) Green Thread Model :- Thread which is managed completely by JVM without takin
 b) Native OS Model :- The thread which is managed by JVM with the help of underline OS, is called native OS Model. All windows based OS provide support for native os model.<br> 
 
 ## Thread Group<br>
+- We can group thread into a single unit which is nothing but thread group. In addition to thread thread group contaoin sub thread group<br>
+- The main advantage of maintaining threads in thread group is we can perform common operation very easily.<br>
+- Every thread present in a thread group belongs to some thread group. Main thread belongs to main group. Every thread group is a child group of a System group. System group contains several system level threads eg:- finalise, reference handler, signal dispatcher, attach listener<br>
+- Thread group is a java class present in java.lang package and it is a direct child class of object.<br>
+### Constructors<br>
+```Java
+ThreadGroup th = new ThreadGroup(String gname);
+```
+Creates a new group with specified group name. Parent of new group is thread group of currently executing thread.
+```Java
+ThreadGroup g = new ThreadGroup(ThreadGroup g , String GroupName);
+```
+#### Problems with traditional synchronised keyword<br>
+- We are not having any flexibility to try for lock without waiting<br>
+- There is no way to specify waiting time for a thread to get a lock so that thread will wait until getting the lock which may creates performace problem which may cause deadlock.<br>
+- If a thread releases lock then which waiting thread will get that lock we are not having any control on this.<br>
+- There is no api to list out all waiting threads for a lock <br>
