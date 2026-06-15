@@ -255,3 +255,25 @@ ThreadGroup g = new ThreadGroup(ThreadGroup g , String GroupName);
 - There is no way to specify waiting time for a thread to get a lock so that thread will wait until getting the lock which may creates performace problem which may cause deadlock.<br>
 - If a thread releases lock then which waiting thread will get that lock we are not having any control on this.<br>
 - There is no api to list out all waiting threads for a lock <br>
+
+### Lock Interface<br>
+Lock object is similar to implicit lock acquire by thread to execute synchronise method and synchronise block. Lock implementation provide more extensive operations than traditional implicit locks.<br>
+###### Important methods of lock interface<br>
+1. **void lock() :-** We can use this method to acquire a lock. If a lock is already available then immediately current thread will get the lock. If lock is not available then it will wait until to get lock.<br>
+2. **boolean tryLock() :-** To acquire the lock without waiting if the lock is available then the thread qcquire the lock and returns true. If lock is not available then this method returns false and continue its execution without waiting and thread never enters in the waiting state.<br>
+3. **boolean tryLock(Long time, Timeunit unit) :-** If lock is available thread will get the lock and continue its execution. If lock is not available then thread will wait until specified amount of time still lock is not available then thread can continue its execution.<br>
+**TimeUnit :-** Time unit is an enum present in java.util.concurent package.
+```Java
+enum TimeUnit{
+  NANOSECONDS,
+  MICROSECONDS,
+  MILISECONDS,
+  SECONDS,
+  MINUTES,
+  HOURS,
+  DAYS
+}
+```
+4. **void lockInterruptibly() :-** Acquires the lock if it is availabale and returns immediately. If the lock is not available it will wait. While waiting if the thread is interrupted then thread won't get a lock.<br>
+5. **void unLock() :-** To call this method compulsary current thread should be the owner of that lock else we will get runtime excaption IllegalMonitorStateException.<br>
+## Re-entrant Lock <br>
