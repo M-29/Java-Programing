@@ -69,10 +69,10 @@ Instead of returning HTTP 429, place excess requests in a queue.<br>
                    |
         +----------+----------+
         |                     |
-   40 Processed         60 Queued
+   40 Processed           60 Queued
                               |
                               v
-                    Kafka / RabbitMQ
+                       Kafka / RabbitMQ
                               |
                               v
                       Worker Processes
