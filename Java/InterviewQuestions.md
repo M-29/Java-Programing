@@ -104,3 +104,47 @@ Least Connections is a load-balancing algorithm where the next incoming request 
 More powerful servers receive more traffic.<br>
 #### Spring Actuator<br>
 Spring Boot Actuator is a production-ready module used to monitor and manage Spring Boot applications. It exposes endpoints such as /actuator/health, /actuator/metrics, /actuator/info, and /actuator/beans. In production, it's commonly used by load balancers and Kubernetes to perform health checks, while monitoring systems use it to collect metrics. It also supports custom HealthIndicator implementations so applications can report the status of external dependencies like payment services or messaging systems.<br>
+**Ques :- if there are 4 thread doing operation on concurrenthasmap thread 1 and tread 2 is performing read and thread 3 and thread 4 performing write operation how we will manage thread safety and what is the execution process for concurrent hashmap**
+Ans :-  Reads are generally lock-free.<br>
+Thread-1 and Thread-2 can read simultaneously.<br>
+They do not block each other.<br>
+**for write:-**<br>
+ConcurrentHashMap does not lock the entire map.<br>
+It locks only the affected bucket/node internally.<br>
+**Case 1:** Different Keys, Different Buckets<br>
+Thread-3 locks Bucket 2<br>
+Thread-4 locks Bucket 8<br>
+Both writes happen in parallel<br>
+
+**Case 2:** Same Bucket<br>
+Thread-3 acquires Bucket 2 lock<br>
+Thread-4 waits<br>
+Thread-3 releases lock<br>
+Thread-4 proceeds<br>
+
+**case 3:** Read During Write<br>
+Suppose:<br>
+Thread-1 → get(1)<br>
+Thread-3 → put(1, "A")<br>
+ConcurrentHashMap uses:<br>
+            volatile variables<br>
+            CAS (Compare-And-Swap)<br>
+            internal synchronization when required to ensure:<br>
+            No corrupted data<br>
+            No inconsistent state<br>
+Reader may see:<br>
+old value, or<br>
+new value<br>
+but never a partially written value.<br>
+
+**Ques: what are checked and unchecked exception**<br>
+Compile Time<br>
+- Happens before execution.<br>
+- Code is converted into bytecode (.class files).<br>
+- Compiler checks syntax, types, and checked exceptions.<br>
+- Errors found here are called compile-time errors.<br>
+
+Runtime:-<br>
+- Happens when JVM executes the program.<br>
+- Runtime exceptions occur while the application is running.<br>
+- Examples: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException.<br>
