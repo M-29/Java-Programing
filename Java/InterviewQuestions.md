@@ -92,3 +92,15 @@ Possible approaches:<br>
 - Redis-backed custom implementation<br>
 **Ques: why local rate limiting fails in distributed systems**<br>
 Local rate limiting means each application instance enforces its own independent limit. If I have three instances with a limit of 40 requests per second each, the system can accept up to 120 requests per second. If the business requires a global limit of 40 requests per second across all instances, local counters are insufficient because they don't share state. In that case, I use a shared store like Redis or enforce the limit at the API Gateway so all instances coordinate using the same counter or token bucket.<br>
+#### Load Balancer<br>
+A load balancer distribute incoming request across multiple application instance to improve scalability, availability and fault tolerance. In a Spring Boot microservices environment, a load balancer sits in front of multiple service instances so the system can handle higher traffic and continue operating even if one instance becomes unavailable.<br>
+**Common Load Balancer Algorithms**<br>
+1) **Round Robin**<br>
+Requests are distributed one after another.<br>
+Request 1 -> Server A<br> Request 2 -> Server B<br> Request 3 -> Server C<br> Request 4 -> Server A<br> Request 5 -> Server B<br>
+2) **Least Connection**<br>
+Least Connections is a load-balancing algorithm where the next incoming request is sent to the server with the fewest active connections.<br>
+3) **Weighted Round Robin**<br>
+More powerful servers receive more traffic.<br>
+#### Spring Actuator<br>
+Spring Boot Actuator is a production-ready module used to monitor and manage Spring Boot applications. It exposes endpoints such as /actuator/health, /actuator/metrics, /actuator/info, and /actuator/beans. In production, it's commonly used by load balancers and Kubernetes to perform health checks, while monitoring systems use it to collect metrics. It also supports custom HealthIndicator implementations so applications can report the status of external dependencies like payment services or messaging systems.<br>
