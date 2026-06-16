@@ -62,20 +62,20 @@ Reduces unnecessary resource usage.<br>
 Ques :- What If Business Does Not Want to Reject Requests?<br>
 Instead of returning HTTP 429, place excess requests in a queue.<br>
 
-             100 Requests
-                   |
-                   v
-            API Gateway
-                   |
-        +----------+----------+
-        |                     |
-   40 Processed           60 Queued
-                              |
-                              v
-                       Kafka / RabbitMQ
-                              |
-                              v
-                      Worker Processes
+             100 Requests<br>
+                   |<br>
+                   v<br>
+            API Gateway<br>
+                   |<br>
+        +----------+----------+<br>
+        |                     |<br>
+   40 Processed           60 Queued<br>
+                              |<br>
+                              v<br>
+                       Kafka / RabbitMQ<br>
+                              |<br>
+                              v<br>
+                      Worker Processes<br>
 
 
 This is suitable for asynchronous operations such as:<br>
