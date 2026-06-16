@@ -277,3 +277,18 @@ enum TimeUnit{
 4. **void lockInterruptibly() :-** Acquires the lock if it is availabale and returns immediately. If the lock is not available it will wait. While waiting if the thread is interrupted then thread won't get a lock.<br>
 5. **void unLock() :-** To call this method compulsary current thread should be the owner of that lock else we will get runtime excaption IllegalMonitorStateException.<br>
 ## Re-entrant Lock <br>
+It is implementation class of lock interface and direct child class of object. Reentrant means a thread can acquire same lock multiple time without any issue. Internally reentrant lock increment thread personal count whenever we call lock method and decrement count when ever we call unlock method and releases lock whenever count reaches zero.<br>
+##### Constructors<br>
+```Java
+ReentrantLock r = new ReentrantLock();
+ReentrantLock r = new ReentrantLock(boolean fairness);// 
+```
+Creates re-entrant lock with the given fairness policy. If fairness is true longest waiting thread acquire the lock if it is available. It follows first come first serve. If fairness is false which thread is going to get chance we don't know. By default the value is false.<br>
+##### Important methods of lock:-
+```Java
+void lock();
+boolean tryLock();
+boolean tryLock(Long i, TimeUnit t);
+void lockInterruptibily();
+void unlock();
+```
