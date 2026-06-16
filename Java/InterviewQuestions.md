@@ -40,7 +40,7 @@ f) **Sliding Window**<br>
 A Sliding Window rate limiter tracks requests over a rolling time period rather than fixed intervals. For example, with a limit of 100 requests per minute, every incoming request is checked against the previous 60 seconds of activity. This avoids the boundary burst problem seen in Fixed Window algorithms and provides fairer, more accurate rate limiting, at the cost of maintaining recent request history.<br>
 
 #### API Gateway-Level Rate Limiting<br>
-100 Requests.<br>
+            100 Requests.<br>
                      |
                      v
           +----------------------+
