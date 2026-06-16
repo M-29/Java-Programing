@@ -77,6 +77,7 @@ Instead of returning HTTP 429, place excess requests in a queue.<br>
                               v
                       Worker Processes
 
+
 This is suitable for asynchronous operations such as:<br>
 1. Email sending<br>
 2. Report generation<br>
