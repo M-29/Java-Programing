@@ -83,3 +83,12 @@ This is suitable for asynchronous operations such as:<br>
 3. Notification delivery<br>
 4. Background data processing<br>
 For real-time APIs, immediate rejection with HTTP 429 is usually preferred.<br>
+
+**Ques: How would you implement rate limiting in Spring Boot**?<br>
+Possible approaches:<br>
+- Bucket4j<br>
+- Resilience4j<br>
+- API Gateway filters<br>
+- Redis-backed custom implementation<br>
+**Ques: why local rate limiting fails in distributed systems**<br>
+Local rate limiting means each application instance enforces its own independent limit. If I have three instances with a limit of 40 requests per second each, the system can accept up to 120 requests per second. If the business requires a global limit of 40 requests per second across all instances, local counters are insufficient because they don't share state. In that case, I use a shared store like Redis or enforce the limit at the API Gateway so all instances coordinate using the same counter or token bucket.<br>
