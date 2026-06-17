@@ -291,4 +291,26 @@ boolean tryLock();
 boolean tryLock(Long i, TimeUnit t);
 void lockInterruptibily();
 void unlock();
+int getHoldCount();// Return number of holds on this lock by current thread
+boolean isHeldByCurrentThread();// Rteurn true if and only if lock is hold by current thread
+int getQueuelength();// returns number of threads waiting for lock.
+Collection getQueuedThread();// It returns collection of threads which are waiting to get lock
+boolean hasQueuedThread(); //Returns true if any thread waiting to get lock;
+boolean isLocked(); //Return true if the is acquired by some thread
+boolean isFair(); // Returns true if fairness policy is set with true value
+Thread getOwner();//Returns thread which acquire the lock
+```
+#### Thread Pool(Executor Framework)<br>
+Creating a new thread for every job may create performance and memory problem to overcome this we should go for threadpool.
+Thread pool is pool of already created thread ready to use. Thread pool framework is also known as executor framework.<br>
+```Java
+ExecutorService service = Executors.newFixedThreadPool(3);
+```
+we can submit a runnable job using submit
+```Java
+service.submit(job);
+```
+we can shutdown executor service using shutdown method
+```Java
+service.shutdown();
 ```
