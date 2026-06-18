@@ -274,3 +274,5 @@ A new business operation that reverse the business effect of the earlier step.<b
 | `execute()`         | Any         | Custom           | Advanced processing                     |
 
 ```
+**Ques:- Map and flatMap** <br>
+map() is used when each input element is transformed into a single output value. flatMap() is used when the transformation itself returns another container or stream, such as a Stream, Optional, or Mono, and you want to avoid nested structures. In Java Streams, flatMap() is commonly used to flatten nested collections. In reactive programming with Mono or Flux, it is used to chain asynchronous operations that already return reactive types. A simple way to remember it is: map() transforms, while flatMap() transforms and flattens.
