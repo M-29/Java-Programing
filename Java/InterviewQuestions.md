@@ -61,6 +61,7 @@ Reduces unnecessary resource usage.<br>
 
 **Ques :- What If Business Does Not Want to Reject Requests**?<br>
 Instead of returning HTTP 429, place excess requests in a queue.
+```Java
 
              100 Requests
                    |
@@ -69,14 +70,14 @@ Instead of returning HTTP 429, place excess requests in a queue.
                    |
         +----------+----------+
         |                     |
-   40 Processed         60 Queued<br>
-                              |<br>
-                              v<br>
-                    Kafka / RabbitMQ<br>
-                              |<br>
-                              v<br>
-                      Worker Processes<br>
-
+   40 Processed         60 Queued
+                              |
+                              v
+                    Kafka / RabbitMQ
+                              |
+                              v
+                      Worker Processes
+```
 This is suitable for asynchronous operations such as:<br>
 1. Email sending<br>
 2. Report generation<br>
