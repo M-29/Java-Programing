@@ -258,3 +258,19 @@ The original debit is not rolled back. A new transaction restores the business s
 ```
 **Ques what is compensating transaction?** <br>
 A new business operation that reverse the business effect of the earlier step.<br>
+
+**What are the mehods for RestTemplate**
+```Java
+| Method              | HTTP Method | Returns          | Typical Use                             |
+| ------------------- | ----------- | ---------------- | --------------------------------------- |
+| `getForObject()`    | GET         | Response body    | Fetch data                              |
+| `getForEntity()`    | GET         | `ResponseEntity` | Fetch data with status and headers      |
+| `postForObject()`   | POST        | Response body    | Create resource                         |
+| `postForEntity()`   | POST        | `ResponseEntity` | Create resource with status and headers |
+| `postForLocation()` | POST        | `URI`            | Get location of created resource        |
+| `put()`             | PUT         | `void`           | Update resource                         |
+| `delete()`          | DELETE      | `void`           | Delete resource                         |
+| `exchange()`        | Any         | `ResponseEntity` | Full request/response control           |
+| `execute()`         | Any         | Custom           | Advanced processing                     |
+
+```
