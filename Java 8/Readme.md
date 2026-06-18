@@ -344,4 +344,24 @@ A class without any name is known as anonymous inner class. An anonymous inner c
     }
 ```
 - Anonymous inner class is more powerful than lambda expression because if an interface having two methods we can't use lambda expression because that interface is not a functional interface any more.
-- For functional interface we can use lambda expression in place of anonymous inner class.
+- For functional interface we can use lambda expression in place of anonymous inner class.<br>
+
+### Optional <br>
+Optional<T> is a container object introduced in Java 8 to represent a value that may or may not be present. Its main purpose is to reduce NullPointerExceptions and make code dealing with missing values more explicit.<br>
+```Java
+Without Optional:
+
+String name = getName();
+
+if (name != null) {
+    System.out.println(name.toUpperCase());
+}
+
+With Optional:
+
+Optional<String> name = getName();
+
+name.ifPresent(n -> System.out.println(n.toUpperCase()));
+
+This clearly communicates that the value might be absent.
+```
