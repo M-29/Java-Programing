@@ -149,3 +149,110 @@ Runtime:-<br>
 - Happens when JVM executes the program.<br>
 - Runtime exceptions occur while the application is running.<br>
 - Examples: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException.<br>
+**Ques: How microservices communicate with each other**?<br>
+In microservice architectures, communication can be synchronous or asynchronous. For synchronous communication, I commonly use REST APIs over HTTP or gRPC when the caller needs an immediate response, such as validating a payment or fetching user details. For asynchronous communication, I use message brokers like Kafka or RabbitMQ so services can exchange events without blocking each other. In production, I often combine both approaches—for example, using REST for critical request-response operations and Kafka for notifications, analytics, or background processing. To make communication resilient, I configure timeouts, retries for transient failures, circuit breakers, and health checks, and I avoid sharing databases directly between services to keep them loosely coupled and independently deployable.<br>
+**Ques: if we are doing transaction user received msg for cash debit but other user does not receive credit msg and service failed in between how do you handle this transaction**?<br>
+In a money transfer system, I would avoid relying on a distributed transaction across microservices. Instead, I would implement the transfer using the Saga pattern, where each service performs its own local transaction and compensating actions are available if a later step fails. To ensure reliable communication, I would publish events through a broker such as Kafka or RabbitMQ and make consumers idempotent so retries do not create duplicate credits. I would also use the Outbox Pattern so that database updates and event publication remain consistent even if the application crashes. Finally, I would send user notifications only after the business operation reaches the appropriate state, preventing situations where a debit message is delivered even though the overall transfer has not completed successfully.<br>
+**Saga Pattern**<br>
+- The Saga Pattern is a way to manage distributed transactions across multiple microservices.<br>
+- If one step fails, it executes compensating transactions to undo the completed work.<br>
+**How Saga works**<br>
+```Java
+Step 1: Debit User A       ✅
+Step 2: Credit User B      ❌ Failed
+
+Compensation:
+Step 3: Credit User A back ✅
+```
+**Two Ways to Implement Saga:-** <br>
+1. Choreography (Event-Based) :-<br>
+- No central coordinator. <br>
+- Each service publishes events and reacts to events.<br>
+```Java
+Order Service
+      |
+      | OrderCreated
+      v
+Kafka
+      |
+      v
+Inventory Service
+      |
+      | InventoryReserved
+      v
+Kafka
+      |
+      v
+Payment Service
+      |
+      | PaymentCompleted
+      v
+Kafka
+      |
+      v
+Shipping Service
+```
+2. Orchestration (Central Coordinator)<br>
+A dedicated orchestrator controls the workflow.<br>
+```Java
+            Saga Orchestrator
+                  |
+      ----------------------------
+      |            |             |
+      v            v             v
+ Order       Inventory      Payment
+ Service      Service       Service
+```
+**Ques:- what is difference between single rollback and saga other than distributed system what is the difference did saga also do rollback ?** <br>
+1. Single transaction rollback (@Transactional) → The database undoes uncommitted changes automatically.<br>
+Suppose you have one database with two accounts.<br>
+```Java
+User A = ₹10000
+User B = ₹5000
+
+BEGIN
+Debit A      ✅
+Credit B     ❌
+ROLLBACK
+```
+**@Transactional Flow**<br>
+```Java
+BEGIN
+   |
+Debit A
+   |
+Credit B
+   |
+COMMIT
+
+The database automatically discards all uncommitted changes.
+```
+What happened?<br>
+The database never permanently saved the debit because the transaction was not committed.<br>
+
+2. Saga Pattern → The database does not roll back committed changes. Instead, the application performs compensating business actions to reverse the effect.<br>
+Now suppose each service has its own database.<br>
+```Java
+Transfer Service DB
+Account Service DB
+Notification Service DB
+
+Debit A         ✅
+Credit B        ❌
+Compensation:
+Credit A back   ✅
+```
+**Saga Flow**<br>
+```Java
+Debit A  ✅ (Committed)
+    |
+    v
+Credit B ❌
+    |
+    v
+Compensation
+    |
+    v
+Credit A back ✅
+The original debit is not rolled back. A new transaction restores the business state.
+```
