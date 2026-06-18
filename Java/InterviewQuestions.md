@@ -275,4 +275,9 @@ A new business operation that reverse the business effect of the earlier step.<b
 
 ```
 **Ques:- Map and flatMap** <br>
-map() is used when each input element is transformed into a single output value. flatMap() is used when the transformation itself returns another container or stream, such as a Stream, Optional, or Mono, and you want to avoid nested structures. In Java Streams, flatMap() is commonly used to flatten nested collections. In reactive programming with Mono or Flux, it is used to chain asynchronous operations that already return reactive types. A simple way to remember it is: map() transforms, while flatMap() transforms and flattens.
+map() is used when each input element is transformed into a single output value. flatMap() is used when the transformation itself returns another container or stream, such as a Stream, Optional, or Mono, and you want to avoid nested structures. In Java Streams, flatMap() is commonly used to flatten nested collections. In reactive programming with Mono or Flux, it is used to chain asynchronous operations that already return reactive types. A simple way to remember it is: map() transforms, while flatMap() transforms and flattens.<br>
+
+**Ques: Authentication v/s Authorization** <br>
+Authentication verifies the identity of a user—confirming who they are, such as by checking a username and password or validating a token. Authorization determines what that authenticated user is allowed to do, based on roles or permissions. Authentication happens first; authorization is evaluated afterward to decide whether access to a resource should be granted.<br>
+- 401 Unauthorized (despite the name, it generally means authentication is missing or invalid): the client has not successfully authenticated.<br>
+- 403 Forbidden: the client is authenticated but does not have permission to access the requested resource.<br>
