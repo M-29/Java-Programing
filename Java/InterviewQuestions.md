@@ -256,3 +256,5 @@ Compensation
 Credit A back ✅
 The original debit is not rolled back. A new transaction restores the business state.
 ```
+**Ques what is compensating transaction?** <br>
+A new business operation that reverse the business effect of the earlier step.<br>
