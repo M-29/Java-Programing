@@ -281,3 +281,45 @@ map() is used when each input element is transformed into a single output value.
 Authentication verifies the identity of a user—confirming who they are, such as by checking a username and password or validating a token. Authorization determines what that authenticated user is allowed to do, based on roles or permissions. Authentication happens first; authorization is evaluated afterward to decide whether access to a resource should be granted.<br>
 - 401 Unauthorized (despite the name, it generally means authentication is missing or invalid): the client has not successfully authenticated.<br>
 - 403 Forbidden: the client is authenticated but does not have permission to access the requested resource.<br>
+
+**Ques :- Why Strings are immutable?** <br>
+A String is immutable, which means once a String object is created, its value cannot be changed. Any operation that appears to modify a string actually creates a new String object.<br>
+```Java
+String s = "Hello";
+s = s + " World"; //A new string "Hello World" is created, and s now refers to it.
+```
+**Reasons for immutability** <br>
+**1. Security:-** Strings are often used to store sensitive information such as:<br>
+- Database URLs <br>
+- File paths <br>
+If strings were mutable, one part of the program could change a value after another part had validated it. <br>
+
+**2. String Pool optimization** <br>
+Java maintains a String Pool to reuse identical string literals and save memory.
+```Java
+String s1 = "Java";
+String s2 = "Java";
+```
+Both s1 and s2 reference the same pooled object. If strings were mutable and s1 changed to "Python", it would unexpectedly affect s2 as well. Immutability makes pooling safe. <br>
+**3. Thread safety** <br>
+Immutable objects can be shared across multiple threads without synchronization because their state never changes. Multiple threads can safely read message at the same time.<br>
+```Java
+String message = "Welcome";
+```
+**4. Stable hash codes** <br>
+String objects are frequently used as keys in collections like HashMap. If a string key could change after insertion, its hash code could change too, making lookups unreliable. Immutability ensures the hash code remains consistent.<br>
+```Java
+Map<String, Integer> map = new HashMap<>();
+map.put("user1", 100);
+```
+**Ques :- HTTP and HTTPS protocol** <br>
+| Feature         | HTTP                                      | HTTPS                                                  |
+| --------------- | ----------------------------------------- | ------------------------------------------------------ |
+| Full Form       | HyperText Transfer Protocol               | HyperText Transfer Protocol Secure                     |
+| Security        | Data is sent in plain text                | Data is encrypted using SSL/TLS                        |
+| Encryption      | ❌ No                                      | ✅ Yes                                                  |
+| Default Port    | **80**                                    | **443**                                                |
+| Certificate     | Not required                              | Requires an SSL/TLS certificate                        |
+| Data Protection | Vulnerable to eavesdropping and tampering | Protects confidentiality and integrity of data         |
+| URL Prefix      | `http://`                                 | `https://`                                             |
+| Recommended For | Non-sensitive content                     | Login pages, payments, APIs, banking, healthcare, etc. |
