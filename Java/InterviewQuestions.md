@@ -323,3 +323,5 @@ map.put("user1", 100);
 | Data Protection | Vulnerable to eavesdropping and tampering | Protects confidentiality and integrity of data         |
 | URL Prefix      | `http://`                                 | `https://`                                             |
 | Recommended For | Non-sensitive content                     | Login pages, payments, APIs, banking, healthcare, etc. |
+<br>
+**Ques :- If you are uploading a file which is having a billion of data how will you store it in a database?** <br?
