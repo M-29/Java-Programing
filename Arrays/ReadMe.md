@@ -66,6 +66,10 @@ Instead of simulating the queue (which is messy and slow), you:
 
 ## Merge Sorted Array
 In this question we can solve question with two approaches 
-    **Approach 1**  we will first find the correct insertion position for the element of nums2 and shift the element to right and insert the element at that position but the time complexity is O(mn + n^2)\n
+    **Approach 1**  we will first find the correct insertion position for the element of nums2 and shift the element to right and insert the element at that position but the time complexity is O(mn + n^2)\
     **Approach 2** we will use three pointer and compare value of nums1 and nums2 the greater one will shift at the end of the array the time complexity for this approach is O(m+n)
     
+## Remove Elements from array
+In this question we can solve with two approaches 
+    **Approach 1** we will traverse the array and if we found the match we will shift elements to the right\
+    **Approach 2** we will use two pointer and traverse the array and shift only those element which are not equal to the match value\ 
